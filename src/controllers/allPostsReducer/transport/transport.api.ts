@@ -35,3 +35,5 @@ class API {
 
 
 }
+
+export const PostAPI = new API()
