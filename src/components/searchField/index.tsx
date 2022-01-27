@@ -18,6 +18,7 @@ const SearchField: React.FC<IProps> = (props) => {
         <input 
             className="search-input"
             value={props.searchWord}
+            placeholder='Find title by word'
             onChange={(e) => dispatch(actions.setWord({word: e.target.value}))}
         >
         </input>
