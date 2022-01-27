@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+
+// component 
 import App from './App';
+
+// config
+import { Config } from './config/api';
+
+// store
+import store from './store'
+
+// styles
+import "./assets/scss/main.scss";
+
 import reportWebVitals from './reportWebVitals';
 
+Config.init({
+  MAIN_HOST_URL: process.env.REACT_APP_MAIN_URL || ''
+})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
