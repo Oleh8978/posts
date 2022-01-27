@@ -24,13 +24,13 @@ class RoutingSchema {
   private schema: IRoute[] = [
     {
       name: 'posts',
-      path: '/',
+      path: '/posts',
       isExact: true,
       component: Posts,
     },
     {
       name: 'post',
-      path: '/:id',
+      path: '/post/:id',
       isExact: true,
       component: Post,
     },

@@ -7,7 +7,7 @@ class API {
 
     public async getPosts(): Promise<IPost[]> {
 
-        const uriPosts = new URL(Config.MAIN_PATH_POSTS_URI);
+        const uriPosts = new URL(Config.MAIN_PATH_POSTS_URI + 'posts/');
 
         return handleErrors(
             fetch(uriPosts.toString(), {
@@ -21,7 +21,7 @@ class API {
 
     public async getPost(id: string): Promise<IPost[]> {
 
-        const uriPosts = new URL(Config.MAIN_PATH_POSTS_URI + id);
+        const uriPosts = new URL(Config.MAIN_PATH_POSTS_URI + 'posts/' + id);
 
         return handleErrors(
             fetch(uriPosts.toString(), {

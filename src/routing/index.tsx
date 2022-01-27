@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { push } from 'connected-react-router';
-import { connect, useDispatch } from 'react-redux';
-
-// interfaces
-import { IStore } from '../controllers/interfaces';
+import React  from 'react';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 // routing schema
 import RoutingSchema, { IRoute } from './schema';
@@ -39,34 +34,18 @@ const generateRoutes = (routes: IRoute[]) => {
 const Routes = generateRoutes(RoutingSchema.getSchema);
 
 interface Props {
-  location: string;
-  authStatus?: boolean;
-  loader: boolean;
 }
 
-const Routing: React.FC<Props> = (props) => {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-
-  }, []);
-
+const Routing: React.FC<Props> = () => {
 
     return (
-        <>
+        <BrowserRouter>
           <Switch>
            {Routes}
+           <Redirect to={RoutingSchema.getLink('posts')} />
           </Switch>
-        </>
+        </BrowserRouter>
     );
 };
 
-export default connect(
-  (state: IStore) => ({
-
-  }),
-  {
-    push,
-  },
-)(Routing);
+export default Routing

@@ -16,8 +16,8 @@ if (process.env.NODE_ENV === 'development') {
         applyMiddleware(sagaMiddleWare)
     )
 }
-
-const store = createStore(rootReducer(), middleWares);
+// @ts-ignore
+const store = createStore(rootReducer(history), middleWares);
 
 sagaMiddleWare.run(rootSaga);
 

@@ -1,1 +1,10 @@
 @import "normalize";
+
+// components
+@import "components/error";
+@import "components/loader";
+@import "components/search";
+
+// pages
+@import "pages/posts";
+@import "pages/post"

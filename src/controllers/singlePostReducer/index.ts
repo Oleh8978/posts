@@ -21,7 +21,7 @@ export const postSaga = function* () {
 
 /* Reducer */
 const initialState: IPostState = {
-    post: {}
+    post: null
 };
 
 export const postReducer = createReducer<IPostState, SinglePostType>(

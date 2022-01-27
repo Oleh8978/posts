@@ -1,5 +1,8 @@
 import React from 'react';
 
+// components
+import List from '../../components/List'
+
 interface IProps {
 
 }
@@ -7,7 +10,7 @@ interface IProps {
 const Posts: React.FC<IProps> = () => {
   return (
     <div className="posts">
-
+        <List />
     </div>
   );
 }

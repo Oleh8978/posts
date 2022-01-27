@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
 
 // component 
 import App from './App';
@@ -9,7 +10,10 @@ import App from './App';
 import { Config } from './config/api';
 
 // store
-import store from './store'
+import store from './store';
+
+// History
+import history from './historyAPI';
 
 // styles
 import "./assets/scss/main.scss";
@@ -22,9 +26,11 @@ Config.init({
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ConnectedRouter history={history}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
